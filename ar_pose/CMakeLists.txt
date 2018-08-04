@@ -6,7 +6,6 @@ project(ar_pose)
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	visualization_msgs
-	artoolkit
 	geometry_msgs
 	tf
 	resource_retriever
@@ -15,6 +14,9 @@ find_package(catkin REQUIRED COMPONENTS
 	message_generation
 )
 
+find_package(artoolkit)
+find_package(GLUT REQUIRED)
+find_package(OpenGL REQUIRED)
 
 add_message_files(
   DIRECTORY msg
@@ -28,16 +30,17 @@ generate_messages(DEPENDENCIES
 )
 
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS include /usr/local/include
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS
     roscpp
     geometry_msgs
     visualization_msgs
-    artoolkit
     message_runtime
 )
 
 include_directories(${catkin_INCLUDE_DIRS} include)
+set(ARTOOLKIT_LIBRARY libAR.a libARgsub.a libARgsub_lite.a libARvideo.a libARMulti.a libARgsubUtil.a)
 
 add_executable(ar_single
 	src/ar_single.cpp
@@ -45,6 +48,7 @@ add_executable(ar_single
 )
 target_link_libraries(ar_single
 	${catkin_LIBRARIES}
+        ${ARTOOLKIT_LIBRARY}
 )
 add_dependencies(ar_single
 	${PROJECT_NAME}_generate_messages_cpp
@@ -57,6 +61,13 @@ add_executable(ar_multi
 )
 target_link_libraries(ar_multi
 	${catkin_LIBRARIES}
+        ${OPENGL_LIBRARIES}
+        ${GLUT_LIBRARY}
+        ${OPENGL_gl_LIBRARY}
+        ${ARTOOLKIT_LIBRARY}
+        -lGL
+        -lGLU
+        -lglut
 )
 add_dependencies(ar_multi
 	${PROJECT_NAME}_generate_messages_cpp
