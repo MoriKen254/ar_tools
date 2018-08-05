@@ -30,8 +30,7 @@ generate_messages(DEPENDENCIES
 )
 
 catkin_package(
-  INCLUDE_DIRS include /usr/local/include
-  LIBRARIES ${PROJECT_NAME}
+  INCLUDE_DIRS include 
   CATKIN_DEPENDS
     roscpp
     geometry_msgs
