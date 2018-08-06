@@ -30,5 +30,6 @@
   <depend>message_runtime</depend>
   <build_depend>glut</build_depend>
   <build_depend>libv4l-dev</build_depend>
-
+  <build_depend>libxmu-dev</build_depend>
+  <build_depend>libxi-dev</build_depend>
 </package>
