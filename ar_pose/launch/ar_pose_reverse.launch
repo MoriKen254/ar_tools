@@ -4,7 +4,7 @@
   <node pkg="tf" type="static_transform_publisher" name="world_to_marker" 
     args="0 1 1 -1.57 3.14 -1.57 world ar_marker 10" />
   <node ns="camera" pkg="image_proc" type="image_proc" name="image_proc"/>
-  <node ns="camera" pkg="uvc_camera" type="camera_node" name="uvc_camera"
+  <node ns="camera" pkg="uvc_camera" type="uvc_camera_node" name="uvc_camera"
     output="screen">
     <param name="width" type="int" value="320" />
     <param name="height" type="int" value="240" />
