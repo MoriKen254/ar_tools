@@ -3,7 +3,7 @@
 
 ## Install ARToolKit as 3rd-party
 ```bash
-https://github.com/MoriKen254/ARToolKit_Release/raw/master/ARToolKit_2.72.1_Ubuntu_amd64.deb
+wget https://github.com/MoriKen254/ARToolKit_Release/raw/master/ARToolKit_2.72.1_Ubuntu_amd64.deb
 dpkg -i ARToolKit_2.72.1_Ubuntu_amd64.deb
 ```
 
@@ -13,8 +13,10 @@ mkdir -p <catkin_ws>/src
 cd catkin_ws/src
 catkin_init_workspace
 git clone -b w/o_artoolkit https://travis-ci.org/MoriKen254/ar_tools.git 
+```
 
 ## Resolve dependencies, Build and Test
+``bash
 cd <catkin_ws>
 rosdep update
 rosdep install --from-paths src -iy
