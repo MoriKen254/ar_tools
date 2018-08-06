@@ -80,7 +80,7 @@ foreach(modules ar_single ar_multi)
   )
 endforeach(modules)
 
-foreach(dir launch demo data)
+foreach(dir launch demo data include)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)

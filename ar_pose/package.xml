@@ -33,4 +33,7 @@
   <build_depend>libxmu-dev</build_depend>
   <build_depend>libxi-dev</build_depend>
   <test_depend>roslaunch</test_depend>
+  <test_depend>image_proc</test_depend>
+  <test_depend>rviz</test_depend>
+  <test_depend>uvc_camera</test_depend>
 </package>
