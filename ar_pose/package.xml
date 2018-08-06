@@ -32,4 +32,5 @@
   <build_depend>libv4l-dev</build_depend>
   <build_depend>libxmu-dev</build_depend>
   <build_depend>libxi-dev</build_depend>
+  <test_depend>roslaunch</test_depend>
 </package>

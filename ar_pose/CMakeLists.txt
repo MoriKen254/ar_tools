@@ -4,14 +4,15 @@ cmake_minimum_required(VERSION 2.8)
 project(ar_pose)
 
 find_package(catkin REQUIRED COMPONENTS
-	roscpp
-	visualization_msgs
-	geometry_msgs
-	tf
-	resource_retriever
-	image_transport
 	cv_bridge
+	geometry_msgs
+	image_transport
 	message_generation
+	resource_retriever
+	roscpp
+	roslaunch
+	tf
+	visualization_msgs
 )
 
 find_package(GLUT REQUIRED)
