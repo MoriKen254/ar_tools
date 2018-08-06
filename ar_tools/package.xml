@@ -1,4 +1,5 @@
-<package>
+<?xml version="1.0"?>
+<package format="2">
   <name>ar_tools</name>
   <version>0.0.0</version>
 
@@ -18,8 +19,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>artoolkit</run_depend>
-  <run_depend>ar_pose</run_depend>
+  <exec_depend>ar_pose</exec_depend>
 
   <export>
     <metapackage/>
