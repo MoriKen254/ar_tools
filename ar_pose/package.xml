@@ -28,5 +28,6 @@
   <depend>image_transport</depend>
   <depend>cv_bridge</depend>
   <depend>message_runtime</depend>
+  <build_depend>glut</build_depend>
 
 </package>

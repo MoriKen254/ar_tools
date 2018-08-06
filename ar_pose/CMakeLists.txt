@@ -14,7 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
 	message_generation
 )
 
-find_package(artoolkit)
 find_package(GLUT REQUIRED)
 find_package(OpenGL REQUIRED)
 
