@@ -75,7 +75,7 @@ add_dependencies(ar_multi
 
 # Install
 foreach(modules ar_single ar_multi)
-  install(TARGETS ${module}
+  install(TARGETS ${modules}
     RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   )
 endforeach(modules)
