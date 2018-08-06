@@ -73,21 +73,22 @@ add_dependencies(ar_multi
 	${artoolkit_EXPORTED_TARGETS}
 )
 
-install(TARGETS ar_single
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# Install
+foreach(modules ar_single ar_multi)
+  install(TARGETS ${module}
+    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
+endforeach(modules)
 
-install(TARGETS ar_multi
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+foreach(dir launch demo data)
+  install(DIRECTORY ${dir}/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
 
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-)
-
-install(DIRECTORY demo/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/demo
-)
-install(DIRECTORY data/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/data
-)
+# Test
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch/ar_pose_multi.launch)
+  roslaunch_add_file_check(launch/ar_pose_reverse.launch)
+  roslaunch_add_file_check(launch/ar_pose_single.launch)
+endif()
